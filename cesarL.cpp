@@ -3,9 +3,9 @@
 
 void showCesarL() {
     Rect r;
-    r.bot = 440;
+    r.bot = 220;
     r.center = 20;
-    r.left = 625;
+    r.left = 312;
     ggprint16(&r, 16, 0x0000ff, "Cesar Lara");
 }
 

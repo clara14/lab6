@@ -833,6 +833,7 @@ void render()
 		glEnd();
 		++b;
 	}
+	showCesarL();
 	drawBox((gl.xres/2), (gl.yres/2));
 }
 
