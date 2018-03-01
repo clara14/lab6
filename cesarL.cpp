@@ -1,23 +1,31 @@
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <cmath>
-using namespace std;
-#include <unistd.h>
-#include <X11/Xlib.h>
-//#include <X11/Xutil.h>
-////#include <GL/gl.h>
-////#include <GL/glu.h>
-//#include <X11/keysym.h>
-//#include <GL/glx.h>
-//#include "log.h"
+#include <GL/glx.h>
 #include "fonts.h"
 
 void showCesarL() {
     Rect r;
-    r.bot = 500;
-    r.center = 0;
-    r.left = 600;
-    ggprint16(&r, 16, 0xff00ff, "Cesar Lara");
+    r.bot = 440;
+    r.center = 20;
+    r.left = 625;
+    ggprint16(&r, 16, 0x0000ff, "Cesar Lara");
+}
+
+void drawBox(int x, int y) {
+    static float angle = 0.0;
+    glColor3f(255.0f, 0.0f, 255.0f);
+    glPushMatrix();
+    glTranslatef(x, y, 0);
+    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    angle = angle + 2.5;
+    glBegin(GL_QUADS);
+    	glVertex2f(-60.0f, 60.0f);
+	glVertex2f(-60.0f, -60.0f);
+	glVertex2f(60.0f, -60.0f);
+	glVertex2f(60.0f, 60.0f);
+    glEnd();
+    Rect r;
+    r.bot = 0;
+    r.center = 10;
+    r.left = 0;
+    ggprint16(&r, 16, 0x0000ff, "Cesar Lara");
+    glPopMatrix();
 }
